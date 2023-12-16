@@ -10,9 +10,11 @@ BEGIN
     //Input : v1 and v2 are given as inputs 
     ps := 0 // Variable initialization to zero
 
-    // now calculating the dot product
-    FOR i FROM 1 to v1.length-1 DO
-        ps := ps + (v1[i] * v2[i])
+    // now calculating the dot product using a nested loop
+    FOR i FROM 1 TO v1_length DO
+        FOR j FROM 1 TO v2_length DO
+            ps := ps + (v1[i] * v2[j])
+        END FOR
     END FOR
     // Output : The dot product is stored in ps    
 END
@@ -44,9 +46,11 @@ FUNCTION dot_product (v1, v2)
 // v1 and v2 vectors representing arrays of real numbers 
 BEGIN
 ps := 0 
-// now calculating the dot product
-    FOR i FROM 1 to v1.length-1 DO
-        ps := ps + (v1[i] * v2[i])
+// now calculating the dot product using a nested loop
+    FOR i FROM 1 TO v1_length DO
+        FOR j FROM 1 TO v2_length DO
+            ps := ps + (v1[i] * v2[j])
+        END FOR
     END FOR
     // Output : The dot product is stored in ps 
 END FUNCTION
