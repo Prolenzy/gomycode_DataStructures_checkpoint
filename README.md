@@ -9,6 +9,8 @@ The sum of the distinct elements will then be calculated and stored in the "sum"
 
 
 Project title: dot_product
+
+
 The dot_product calculates the dot product of two vectors 
 The v1 and v2 are arrays that represent the the input vectors
 We assume the arrays are of the same length and 'n' is the length
