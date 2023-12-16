@@ -1,0 +1,28 @@
+ALGORITHM sum_distinct_elements
+VAR
+    set1 : ARRAY_OF INTEGER [4] //declaring the array and its length 
+    set2 : ARRAY_OF INTEGER [5] //declaring the array and its length 
+    distinct_elements : ARRAY_OF INTEGER [] //declaring an empty array  
+    sum := 0
+    i : INTEGER
+BEGIN
+    set1 := {3, 1, 7, 9}; //insert the array elements 
+    set2 := {2, 4, 1, 9, 3}; //insert the array elements 
+    Write(distinct_elements := {});
+
+    FOR i FROM 0 TO set1.length-1 STEP 1 DO //index starts from zero 
+        IF NOT Contains(distinct_elements, set1[i]) THEN
+            ADD set1[i] TO distinct_elements
+            sum = sum + set1[i]
+        END_IF
+    END FOR 
+
+     FOR i FROM 0 TO set2.length-1 STEP 1 DO 
+        IF NOT Contains(distinct_elements, set2[i]) THEN
+            ADD set2[i] TO distinct_elements
+            sum = sum + set2[i]
+        END_IF
+    END FOR 
+
+    OUTPUT sum //the sum of the distinct elements 
+END

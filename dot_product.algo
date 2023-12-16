@@ -1,0 +1,67 @@
+//Question 1: dot_product Procedure 
+
+//The dot_product procedure
+PROCEDURE dot_product(v1, v2)
+VAR
+     v1 : ARRAY_OF REAL NUMBERS
+     v2 : ARRAY_OF REAL NUMBERS      
+     ps : INTEGER // dot product result
+BEGIN
+    //Input : v1 and v2 are given as inputs 
+    ps := 0 // Variable initialization to zero
+
+    // now calculating the dot product
+    FOR i FROM 1 to v1.length-1 DO
+        ps := ps + (v1[i] * v2[i])
+    END FOR
+    // Output : The dot product is stored in ps    
+END
+
+
+//Question 2 : Algorithm for originality check by use of a procedure 
+
+
+ALGORITHM check_originality_procedure 
+VAR
+    n : INTEGER // depicts the number of vector pairs     
+BEGIN
+    FOR i FROM 1 TO n DO
+        Read(v1)
+        Read(v2) // Read the two vectors for each pair 
+
+        dot_product(REFERENCE v1, REFERENCE V2) // Call the dot_product procedure with pass-by-reference
+        IF ps := 0 THEN
+            Write("Vectors are orthogonal")
+        ELSE
+            Write("Vectors are not orthogonal")
+        END_IF
+    END FOR
+END 
+
+//Question 3 : Algorithm for originality check by use of a function 
+
+FUNCTION dot_product (v1, v2)
+// v1 and v2 vectors representing arrays of real numbers 
+BEGIN
+ps := 0 
+// now calculating the dot product
+    FOR i FROM 1 to v1.length-1 DO
+        ps := ps + (v1[i] * v2[i])
+    END FOR
+    // Output : The dot product is stored in ps 
+END FUNCTION
+
+ALGORITHM check_originality_function (n)
+BEGIN
+    FOR i FROM 1 TO n DO
+        Read(v1)
+        Read(v2) // Read the two vectors for each pair 
+
+        ps := dot_product(COPY v1, COPY V2) // Call the dot_product function with pass-by-value
+        IF ps := 0 THEN
+            Write("Vectors are orthogonal")
+        ELSE
+            Write("Vectors are not orthogonal")
+        END_IF
+    END FOR
+END
